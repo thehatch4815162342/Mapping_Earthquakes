@@ -19,7 +19,8 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 // Create a base layer that holds both maps.
 let baseMaps = {
   Street: streets,
-  Dark: dark
+  "Satellite Streets": satelliteStreets
+  //Dark: dark
 };
 
 // Create the map object with center, zoom level and default layer.
@@ -35,12 +36,6 @@ L.control.layers(baseMaps).addTo(map);
 
 // Accessing the airport GeoJSON URL
 let torontoData = "https://raw.githubusercontent.com/thehatch4815162342/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/torontoRoutes.json";
-
-// Create a style for the lines.
-let myStyle = {
-  color: "#ffffa1",
-  weight: 2
-}
 
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
